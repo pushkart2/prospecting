@@ -1,3 +1,5 @@
+QBCore = exports["qb-core"]:GetCoreObject()
+
 local DEBUG = false
 local function debugLog() end
 if DEBUG then debugLog = function(...)
@@ -165,4 +167,31 @@ RegisterServerEvent("prospecting:userRequestsLocations")
 AddEventHandler("prospecting:userRequestsLocations", function()
     local player = source
     UpdateProspectingTargets(player)
+end)
+
+
+RegisterServerEvent("prospecting:userCollectedNode")
+AddEventHandler("prospecting:userCollectedNode", function(source, resource, data, x, y, z)
+    local source = source
+    local Player = QBCore.Functions.GetPlayer(source)
+
+    local index = math.random(1, #(Config.Items[data]))
+    local reward = Config.Items[data][index]
+
+    Player.Functions.AddItem(reward, 1)
+    TriggerClientEvent("inventory:client:ItemBox", source, QBCore.Shared.Items[reward], "add")
+end)
+
+-- thread to setup prospecting target at server start
+CreateThread(function()
+    for k, v in pairs(Config.Locations) do
+        AddProspectingTarget(v.coords.x, v.coords.y, v.coords.z, v.data)
+    end
+end)
+
+
+
+--command to start prospecting
+RegisterCommand("startpros", function(source, args)
+    StartProspecting(source)
 end)

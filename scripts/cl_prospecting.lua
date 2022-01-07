@@ -1,3 +1,5 @@
+QBCore = exports["qb-core"]:GetCoreObject()
+
 local DEBUG = false
 local function debugLog() end
 if DEBUG then debugLog = function(...)

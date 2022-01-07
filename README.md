@@ -1,4 +1,6 @@
 # Prospecting
+
+# WIP for QBCore
 #### A prospecting mini-game handler for FiveM. Allows resources to control via an API.
 
 ![](https://cdn.tycoon.community/rrerr/pwq1q.png)

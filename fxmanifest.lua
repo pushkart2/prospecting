@@ -14,6 +14,10 @@ details [[
     Yes, I did actually buy it for $11
 ]]
 
+shared_scripts{
+    "config.lua",
+}
+
 dependencies {'instructional-buttons'}
 client_script '@instructional-buttons/include.lua'
 
