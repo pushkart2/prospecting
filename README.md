@@ -1,6 +1,15 @@
-# Prospecting
+# Prospecting ( WIP for QBCore )
 
-# WIP for QBCore
+## Goals
+- Remove dependency with instructional buttons
+- Make it item based
+- Remove Multilingual dependency (create a basic locale instead)
+- Add multiple locations and configure return items
+
+If you are interested, you can create pr's for this and make sure they are tested.
+
+#
+
 #### A prospecting mini-game handler for FiveM. Allows resources to control via an API.
 
 ![](https://cdn.tycoon.community/rrerr/pwq1q.png)

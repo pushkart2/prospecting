@@ -189,8 +189,6 @@ CreateThread(function()
     end
 end)
 
-
-
 --command to start and stop prospecting
 RegisterCommand("startpros", function(source, args)
     if Prospecting.IsProspecting(source) then
