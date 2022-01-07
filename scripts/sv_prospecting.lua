@@ -191,7 +191,11 @@ end)
 
 
 
---command to start prospecting
+--command to start and stop prospecting
 RegisterCommand("startpros", function(source, args)
-    StartProspecting(source)
+    if Prospecting.IsProspecting(source) then
+        Prospecting.StopProspecting(source)
+    else
+        Prospecting.StartProspecting(source)
+    end
 end)
